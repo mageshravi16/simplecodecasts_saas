@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1>My Scribes</h1>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scribes.each do |scribe| %>
+      <tr>
+        <td><%= scribe.title %></td>
+        <td><%= scribe.body %></td>
+        <td><%= scribe.date %></td>
+        <td><%= link_to 'Show', scribe,class: 'btn btn-info'  %></td>
+        <td><%= link_to 'Edit', edit_scribe_path(scribe),class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', scribe, method: :delete, data: { confirm: 'Are you sure?' } ,class: 'btn btn-danger'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scribe', new_scribe_path,class: 'btn btn-primary' %>

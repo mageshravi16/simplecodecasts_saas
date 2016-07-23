@@ -1,0 +1,29 @@
+<%= form_for(@scribe) do |f| %>
+  <% if @scribe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scribe.errors.count, "error") %> prohibited this scribe from being saved:</h2>
+
+      <ul>
+      <% @scribe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions form-group">
+    <%= f.submit 'Scribe', class: 'btn btn-success' %>
+  </div>
+<% end %>

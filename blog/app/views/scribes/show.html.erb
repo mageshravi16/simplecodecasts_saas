@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= @scribe.title %></strong>
+  <!--<%= @scribe.title %>-->
+</p>
+
+<p>
+  
+  <%= @scribe.body %>
+</p>
+
+<p>
+ 
+  <%= @scribe.date %>
+</p>
+
+<%= link_to 'Edit', edit_scribe_path(@scribe) %> |
+<%= link_to 'Back', scribes_path %>
